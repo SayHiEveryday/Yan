@@ -11,7 +11,7 @@ import java.util.Objects;
 public class testpoll extends sCmd {
     public testpoll() {
         this.name = "testpoll";
-        this.description = "cloud.salpy.yan.Constant.testpoll";
+        this.description = "cloud.salpy.yan.pri.Constant.testpoll";
     }
     @Override
     public void execute(SlashCommandInteractionEvent event) {

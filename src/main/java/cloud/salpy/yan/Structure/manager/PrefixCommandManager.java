@@ -4,7 +4,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import cloud.salpy.yan.Structure.format.pCmd;
-import cloud.salpy.yan.Constant;
+import cloud.salpy.yan.pri.Constant;
 
 import org.jetbrains.annotations.NotNull;
 

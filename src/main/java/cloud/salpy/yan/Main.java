@@ -14,6 +14,7 @@ import cloud.salpy.yan.component.button.getWebp;
 import cloud.salpy.yan.component.button.pong;
 import cloud.salpy.yan.event.*;
 
+import cloud.salpy.yan.pri.Constant;
 import net.dv8tion.jda.api.JDA;
 
 public class Main {

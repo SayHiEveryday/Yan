@@ -45,5 +45,5 @@ bin/
 
 gradlew
 gradlew.bat
-gradle
-Constant.java
+gradle/
+pri/
