@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'cloud.salpy.yan'
+version = '1.0-SNAPSHOT'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'cloud.salpy.Yan.Main'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it)}
+    }
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.dv8tion:JDA:5.0.0-beta.23'
+    implementation 'org.fusesource:sigar:1.6.4'
+
+}
+
+test {
+    useJUnitPlatform()
+}
