@@ -16,7 +16,9 @@ public class Client {
                 .enableIntents(
                         GatewayIntent.GUILD_MEMBERS,
                         GatewayIntent.GUILD_MESSAGES,
-                        GatewayIntent.MESSAGE_CONTENT
+                        GatewayIntent.MESSAGE_CONTENT,
+                        GatewayIntent.GUILD_MESSAGE_TYPING,
+                        GatewayIntent.GUILD_PRESENCES
                 )
                 .setEventPassthrough(true)
                 .setMemberCachePolicy(MemberCachePolicy.ALL);

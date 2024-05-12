@@ -6,9 +6,7 @@ import cloud.salpy.yan.Structure.manager.CommandManager;
 import cloud.salpy.yan.Structure.manager.PrefixCommandManager;
 import cloud.salpy.yan.commands.pCmd.pAvatar;
 import cloud.salpy.yan.commands.pCmd.pPing;
-import cloud.salpy.yan.commands.sCmd.Ping;
-import cloud.salpy.yan.commands.sCmd.sysinfo;
-import cloud.salpy.yan.commands.sCmd.testpoll;
+import cloud.salpy.yan.commands.sCmd.*;
 import cloud.salpy.yan.component.button.getJpeg;
 import cloud.salpy.yan.component.button.getWebp;
 import cloud.salpy.yan.component.button.pong;
@@ -23,7 +21,11 @@ public class Main {
         manager.add(
                 new Ping(),
                 new sysinfo(),
-                new testpoll()
+                new testpoll(),
+                new purge(),
+                new embedbuilder(),
+                new userinfo(),
+                new guildinfo()
         );
         PrefixCommandManager prefixCommandManager = new PrefixCommandManager();
         prefixCommandManager.add(
