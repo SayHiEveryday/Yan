@@ -7,6 +7,6 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 public class onReady extends ListenerAdapter {
     @Override
     public void onReady(ReadyEvent event) {
-        event.getJDA().getPresence().setStatus(OnlineStatus.INVISIBLE);
+        event.getJDA().getPresence().setStatus(OnlineStatus.IDLE);
     }
 }

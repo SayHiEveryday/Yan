@@ -1,6 +1,6 @@
 package cloud.salpy.yan.commands.sCmd;
 
-import cloud.salpy.yan.Structure.format.sCmd;
+import cloud.salpy.yan.Structure.format.SlashCommandBuilder;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.text.SimpleDateFormat;
 
-public class userinfo extends sCmd {
+public class userinfo extends SlashCommandBuilder {
     public userinfo() {
         this.name = "userinfo";
         this.description = "Get mentioned user infomation";
@@ -48,7 +48,7 @@ public class userinfo extends sCmd {
                     )
                     .addField("Role[" + member.getRoles().size() + "]", roleMentions, true)
                     .setThumbnail(usr.getEffectiveAvatarUrl())
-                    .setColor((userprofile.getAccentColor() == null) ? new Color((int) (Math.random() * 0x1000000)) : userprofile.getAccentColor())
+                    .setColor((userprofile.getAccentColor() == null) ? new Color((int) (Math.random() * 0x1000000)) : new Color(userprofile.getAccentColorRaw()))
                     .setFooter("ID: " + usr.getId());
             if (userprofile.getBannerUrl() != null) {
                 embedBuilder.setImage(Objects.requireNonNull(userprofile.getBanner()).getUrl(2048));

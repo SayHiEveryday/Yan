@@ -7,7 +7,7 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class sCmd {
+public abstract class SlashCommandBuilder {
     public String name = "Null";
     public String description = "";
     public List<OptionData> option = new ArrayList<>();

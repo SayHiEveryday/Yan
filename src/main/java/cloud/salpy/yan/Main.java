@@ -3,7 +3,9 @@ package cloud.salpy.yan;
 import cloud.salpy.yan.Structure.manager.ButtonManager;
 import cloud.salpy.yan.Structure.Client;
 import cloud.salpy.yan.Structure.manager.CommandManager;
+import cloud.salpy.yan.Structure.manager.ContextManager;
 import cloud.salpy.yan.Structure.manager.PrefixCommandManager;
+import cloud.salpy.yan.commands.context.getav;
 import cloud.salpy.yan.commands.pCmd.pAvatar;
 import cloud.salpy.yan.commands.pCmd.pPing;
 import cloud.salpy.yan.commands.sCmd.*;
@@ -38,12 +40,17 @@ public class Main {
                 new getJpeg(),
                 new getWebp()
         );
+        ContextManager contextManager = new ContextManager();
+        contextManager.addUserContext(
+                new getav()
+        );
 
         Client client = new Client(Constant.token);
         client.addEvent(manager);
         client.addEvent(prefixCommandManager);
         client.addEvent(new onMessage());
         client.addEvent(new onReady());
+        client.addEvent(contextManager);
         client.addEvent(buttonManager);
 
         JDA jda = client.build();

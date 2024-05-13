@@ -1,6 +1,6 @@
 package cloud.salpy.yan.commands.sCmd;
 
-import cloud.salpy.yan.Structure.format.sCmd;
+import cloud.salpy.yan.Structure.format.SlashCommandBuilder;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
@@ -14,7 +14,7 @@ import java.awt.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class purge extends sCmd {
+public class purge extends SlashCommandBuilder {
     public purge() {
         this.name = "purge";
         this.description = "Property.purge.description";

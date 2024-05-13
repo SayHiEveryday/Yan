@@ -1,6 +1,6 @@
 package cloud.salpy.yan.Structure.manager;
 
-import cloud.salpy.yan.Structure.format.sCmd;
+import cloud.salpy.yan.Structure.format.SlashCommandBuilder;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
@@ -16,14 +16,13 @@ import java.util.List;
 
 
 public class CommandManager extends ListenerAdapter {
-    private final List<sCmd> command = new ArrayList<sCmd>();
+    private final List<SlashCommandBuilder> command = new ArrayList<SlashCommandBuilder>();
 
     @Override
     public void onReady(ReadyEvent event) {
-        event.getJDA().updateCommands().addCommands().queue();
         for (Guild guild : event.getJDA().getGuilds())
         {
-            for (sCmd c : command)
+            for (SlashCommandBuilder c : command)
             {
                 if (c.option == null) {
                     guild.upsertCommand(c.name.toLowerCase(),c.description).queue();
@@ -36,7 +35,7 @@ public class CommandManager extends ListenerAdapter {
 
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
-        for (sCmd c : command)
+        for (SlashCommandBuilder c : command)
         {
             if (c.name.equals(event.getName()))
             {
@@ -53,11 +52,11 @@ public class CommandManager extends ListenerAdapter {
         }
     }
 
-    public void add(sCmd c)
+    public void add(SlashCommandBuilder c)
     {
         command.add(c);
     }
-    public void add(sCmd... commands) {
+    public void add(SlashCommandBuilder... commands) {
         Collections.addAll(this.command, commands);
     }
 }

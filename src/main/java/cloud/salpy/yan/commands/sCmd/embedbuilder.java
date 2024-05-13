@@ -1,6 +1,6 @@
 package cloud.salpy.yan.commands.sCmd;
 
-import cloud.salpy.yan.Structure.format.sCmd;
+import cloud.salpy.yan.Structure.format.SlashCommandBuilder;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import java.awt.*;
 import java.util.Objects;
 
-public class embedbuilder extends sCmd {
+public class embedbuilder extends SlashCommandBuilder {
     public embedbuilder() {
         this.name = "embedbuilder";
         this.description = "Property.embedbuilder";

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 
 public class Client {
-    private JDABuilder jdaBuilder;
+    private final JDABuilder jdaBuilder;
     public Client(String token) {
         this.jdaBuilder = JDABuilder.createDefault(token)
                 .enableIntents(

@@ -1,14 +1,10 @@
 package cloud.salpy.yan.commands.sCmd;
 
-import cloud.salpy.yan.Structure.format.sCmd;
+import cloud.salpy.yan.Structure.format.SlashCommandBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.utils.messages.MessagePollBuilder;
 
-import java.util.Objects;
-
-public class testpoll extends sCmd {
+public class testpoll extends SlashCommandBuilder {
     public testpoll() {
         this.name = "testpoll";
         this.description = "cloud.salpy.yan.pri.Constant.testpoll";

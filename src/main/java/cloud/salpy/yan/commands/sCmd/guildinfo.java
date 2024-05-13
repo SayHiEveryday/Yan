@@ -1,6 +1,6 @@
 package cloud.salpy.yan.commands.sCmd;
 
-import cloud.salpy.yan.Structure.format.sCmd;
+import cloud.salpy.yan.Structure.format.SlashCommandBuilder;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -9,7 +9,7 @@ import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Objects;
 
-public class guildinfo extends sCmd {
+public class guildinfo extends SlashCommandBuilder {
     public guildinfo() {
         this.name = "guildinfo";
         this.description = "Currect Guild infomation";

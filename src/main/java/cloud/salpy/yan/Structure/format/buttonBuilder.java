@@ -10,7 +10,7 @@ public abstract class buttonBuilder {
     public String idOrUrl;
     public String label;
     public boolean disable = false;
-    public ButtonStyle style = ButtonStyle.PRIMARY;
+    public ButtonStyle style;
     public Emoji emoji = null;
     public abstract void execute(ButtonInteractionEvent event);
     public ItemComponent build() {

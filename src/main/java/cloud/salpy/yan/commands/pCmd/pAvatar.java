@@ -1,16 +1,14 @@
 package cloud.salpy.yan.commands.pCmd;
 
-import cloud.salpy.yan.Structure.format.pCmd;
+import cloud.salpy.yan.Structure.format.PrefixCommandBuilder;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.utils.messages.MessageCreateBuilder;
 
 import java.awt.*;
-import java.util.Arrays;
 import java.util.Objects;
 
-public class pAvatar extends pCmd {
+public class pAvatar extends PrefixCommandBuilder {
     public pAvatar() {
         this.name = "avatar";
     }

@@ -1,9 +1,9 @@
 package cloud.salpy.yan.commands.pCmd;
 
-import cloud.salpy.yan.Structure.format.pCmd;
+import cloud.salpy.yan.Structure.format.PrefixCommandBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class pPing extends pCmd {
+public class pPing extends PrefixCommandBuilder {
     public pPing() {
         this.name = "ping";
     }

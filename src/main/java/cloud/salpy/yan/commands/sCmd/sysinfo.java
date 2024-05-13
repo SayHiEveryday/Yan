@@ -1,13 +1,13 @@
 package cloud.salpy.yan.commands.sCmd;
 
-import cloud.salpy.yan.Structure.format.sCmd;
+import cloud.salpy.yan.Structure.format.SlashCommandBuilder;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import org.hyperic.sigar.Sigar;
 
 import java.awt.*;
 
-public class sysinfo extends sCmd {
+public class sysinfo extends SlashCommandBuilder {
     public sysinfo() {
 
         this.name = "sysinfo";
@@ -33,8 +33,7 @@ public class sysinfo extends sCmd {
                 .setDescription("```\n" +
                                 "Cpu name: " + cpuname + "\n" +
                                 "Java Version: " + System.getProperty("java.version") + "\n" +
-                                "Discord Module: " + event.getJDA().getClass().getPackage().getImplementationVersion() + "\n" +
-                                "เขาคนนั้น: cloud.salpy.yan.Structure.error.NoGfExpectation" + "```"
+                                "JDA Module: " + event.getJDA().getClass().getPackage().getImplementationVersion() + "\n" + "```"
                 )
                 .setColor(new Color((int)(Math.random() * 0x1000000)));
         event.replyEmbeds(embedBuilder.build()).queue();
