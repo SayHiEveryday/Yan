@@ -2,7 +2,7 @@ package cloud.salpy.yan;
 
 import cloud.salpy.yan.core.Client;
 
-import static cloud.salpy.yan.Constant.token;
+import static cloud.salpy.yan.pri.Constant.token;
 
 public class Main {
     public static void main(String[] args) {
