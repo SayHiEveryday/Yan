@@ -21,8 +21,6 @@ repositories {
 
 dependencies {
     implementation 'net.dv8tion:JDA:5.0.0-beta.24'
-    implementation 'org.fusesource:sigar:1.6.4'
-    implementation 'ch.qos.logback:logback-classic:1.5.6'
     implementation 'com.github.ben-manes.caffeine:caffeine:3.1.8'
     implementation 'com.google.code.gson:gson:2.11.0'
 }
