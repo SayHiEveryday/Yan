@@ -6,6 +6,6 @@ import static cloud.salpy.yan.pri.Constant.token;
 
 public class Main {
     public static void main(String[] args) {
-        new Client(token, args).start();
+           new Client(token, args).start();
     }
 }

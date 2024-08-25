@@ -4,6 +4,7 @@ import cloud.salpy.yan.core.Client;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ public abstract class Command {
     private String description;
     private final List<OptionData> option = new ArrayList<>();
     protected final Client client;
-    private Map<String, ButtonExecutable.ButtonExecutableInter> executableInterMap = new HashMap<>();
+    private final Map<String, ButtonExecutable.ButtonExecutableInter> executableInterMap = new HashMap<>();
     protected Command(Client client) {
         this.client = client;
     }
@@ -51,12 +52,16 @@ public abstract class Command {
         }
         return this;
     }
+    public ButtonExecutable.ButtonExecutableInter getButtonRunnable(String customid) {
+        return executableInterMap.get(this.name + "." + customid);
+    }
+
 
     public Command addOption(OptionData... optionData) { option.addAll(List.of(optionData)); return this; }
-    public void executePrefix(MessageReceivedEvent event,String[] args) {
+    public void executePrefix(@NotNull MessageReceivedEvent event, String[] args) {
         event.getMessage().reply("Hey <@" + event.getAuthor().getId() + ">, we do not have this command available with the prefix, but we also have it as a slash command.").queue();
     }
-    public void executeSlash(SlashCommandInteractionEvent event) {
+    public void executeSlash(@NotNull SlashCommandInteractionEvent event) {
         event.reply("How do you interact with this command? Please contact developer").setEphemeral(true).queue();
     }
 }

@@ -7,7 +7,6 @@ import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +18,12 @@ public class CommandManager extends ListenerAdapter {
 
         Command cmd = commandMap.get(event.getName());
         cmd.executeSlash(event);
+    }
+
+    @Override
+    public void onButtonInteraction(ButtonInteractionEvent event) {
+        String[] args = event.getComponentId().split("\\.");
+        commandMap.get(args[0]).getButtonRunnable(args[1]).run(event);
     }
 
     @Override

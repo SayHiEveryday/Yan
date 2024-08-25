@@ -43,7 +43,5 @@ bin/
 
 .idea
 
-gradlew
-gradlew.bat
 gradle/
 pri/

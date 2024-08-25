@@ -10,6 +10,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.utils.messages.MessageCreateBuilder;
+import org.jetbrains.annotations.NotNull;
 
 public class Avatar extends Command {
     public Avatar(Client client) {
@@ -23,7 +24,7 @@ public class Avatar extends Command {
     }
 
     @Override
-    public void executePrefix(MessageReceivedEvent event, String[] args) {
+    public void executePrefix(@NotNull MessageReceivedEvent event, String[] args) {
         String userid;
         if (args[1].isEmpty()) {
             userid = event.getAuthor().getId();
@@ -46,7 +47,7 @@ public class Avatar extends Command {
     }
 
     @Override
-    public void executeSlash(SlashCommandInteractionEvent event) {
+    public void executeSlash(@NotNull SlashCommandInteractionEvent event) {
         User usr = event.getOption("member", event.getUser(), OptionMapping::getAsUser);
         event.reply(new MessageCreateBuilder().setEmbeds(
                 new EmbedBuilder()

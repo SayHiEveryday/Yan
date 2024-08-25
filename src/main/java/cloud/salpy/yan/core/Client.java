@@ -1,9 +1,9 @@
 package cloud.salpy.yan.core;
 
-
 import cloud.salpy.yan.commands.Avatar;
 import cloud.salpy.yan.commands.Ping;
 import cloud.salpy.yan.commands.Purge;
+import cloud.salpy.yan.core.Manager.CacheManager;
 import cloud.salpy.yan.core.Manager.CommandManager;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -35,7 +35,8 @@ public class Client {
                                 GatewayIntent.GUILD_MESSAGES
                         )
                         .setEventPassthrough(true)
-                        .addEventListeners(commandManager);
+                        .addEventListeners(commandManager)
+                        .addEventListeners(new CacheManager());
                 jdaBuilder.useSharding(0,1);
         } else if (arg[0].equals("register")) {
             commandManager.register((JDABuilder.createLight(token)).build());

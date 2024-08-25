@@ -20,11 +20,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'net.dv8tion:JDA:5.0.0-beta.24'
+    implementation 'net.dv8tion:JDA:5.0.0'
     implementation 'com.github.ben-manes.caffeine:caffeine:3.1.8'
     implementation 'com.google.code.gson:gson:2.11.0'
-}
-
-test {
-    useJUnitPlatform()
+    implementation 'org.mongodb:mongodb-driver-async:3.0.4'
 }

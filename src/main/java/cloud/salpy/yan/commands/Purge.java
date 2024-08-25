@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Objects;
@@ -27,7 +28,7 @@ public class Purge extends Command {
     }
 
     @Override
-    public void executePrefix(MessageReceivedEvent event, String[] args) {
+    public void executePrefix(@NotNull MessageReceivedEvent event, String[] args) {
         int limit;
         if (args[0].isEmpty()) {
             limit = 100;
@@ -62,7 +63,7 @@ public class Purge extends Command {
         }
     }
     @Override
-    public void executeSlash(SlashCommandInteractionEvent event) {
+    public void executeSlash(@NotNull SlashCommandInteractionEvent event) {
         int limit;
         try {
             limit = event.getOption("limit").getAsInt();
